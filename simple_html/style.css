@@ -1,0 +1,90 @@
+body {
+  background: rgb(212, 212, 212);
+  color: #fff;
+  font-family: arial;
+  line-height: 1.4em;
+}
+
+a {
+  color: rgb(228, 228, 228);
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+}
+
+.clr {
+  clear: both;
+}
+
+#container {
+  background: rgb(105, 127, 160);
+  width: 960px;
+  margin: 40px auto;
+  margin-left: 40px;
+  overflow: hidden;
+  padding: 40px;
+  float: left;
+}
+
+#sidebar .active {
+  font-weight: bold;
+  color: rgb(75, 73, 73);
+}
+
+#main {
+  float: right;
+  width: 60%;
+}
+
+#main h1 {
+  padding-bottom: 5%;
+}
+
+#main p {
+  padding-bottom: 5%;
+}
+#sidebar {
+  float: left;
+  width: 30%;
+  background: rgb(125, 152, 192);
+  margin-top: 20px;
+  padding: 10px;
+}
+
+#sidebar li {
+  list-style: none;
+  padding-right: 20px;
+  line-height: 50px;
+  font-size: larger;
+}
+
+#sidebar a {
+  padding: 6px;
+  margin-right: 20px;
+}
+
+#sidebar ul {
+  padding-bottom: 100%;
+}
+
+#header {
+  float: right;
+  padding-right: 35%;
+  padding-bottom: 0%;
+}
+
+#footer {
+  text-align: center;
+  padding: 10px;
+  background: rgb(125, 152, 192);
+  margin-top: 300px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 15px;
+}
