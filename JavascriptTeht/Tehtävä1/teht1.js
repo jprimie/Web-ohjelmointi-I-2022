@@ -6,12 +6,11 @@ Luo ratkaisu siten että et käytä valmiita funktioita vaan teet oman algoritmi
 
 Muuta edellinen ratkaisu funktioksi joka palauttaa boolean arvon true, mikäli funktion parametrina oleva sana on palindromi (jos ei, niin palautetaan false).
 
-Kutsu funktiota.
 */
 
 function onkoPalindromi() {
   let input = require("readline-sync");
-  let merkkijono = input.question("Anna merkkijono testattavaksi: ");
+  let merkkijono = input.question("\nAnna merkkijono testattavaksi: ");
   if (merkkijono.length == 0) return false;
   const merkkijonoTaulukko = new Array();
   let eka;
@@ -45,7 +44,7 @@ function onkoPalindromi() {
 }
 
 if (onkoPalindromi()) {
-  console.log("Sana on palindromi");
+  console.log("\nSana on palindromi");
 } else {
-  console.log("Sana ei ole palindromi");
+  console.log("\nSana ei ole palindromi");
 }
