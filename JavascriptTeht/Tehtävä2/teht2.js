@@ -1,44 +1,57 @@
-const puhelinluettelo = [
-  {
-    nimi: "Matti Meikäläinen",
-    puhnro: "0503890123",
-  },
-];
+class Henkilo {
+  constructor(nimi, puhnro) {
+    this.nimi = nimi;
+    this.puhnro = puhnro;
+  }
+}
+const puhelinluettelo = [];
+puhelinluettelo.push(
+  new Henkilo("Sami X", "01234567890"),
+  new Henkilo("Matti Meikäläinen", "0503890123")
+);
+
 let input = require("readline-sync");
 
+puhelinluetteloApp();
+
 function puhelinluetteloApp() {
-  console.log("Puhelinluettelo\n");
+  console.log("\nPuhelinluettelo\n");
   let valinta = input.question(
-    "1. Lisaa henkilo \n2. Hae numeroa nimella\n0. Lopeta ohjelma\n"
+    "1. Lisaa henkilo \n2. Hae numeroa nimella\n0. Lopeta ohjelma\n\n"
   );
   while (true) {
     if (valinta == 1) {
-      let uusihenkilo = {
-        nimi: input.question("Anna nimi: "),
-        puhnro: input.question("Anna puhelinnumero: "),
-      };
-      puhelinluettelo.push(uusihenkilo);
+      puhelinluettelo.push(
+        new Henkilo(
+          input.question("\nAnna nimi: "),
+          input.question("Anna puhelinnumero: ")
+        )
+      );
       console.log("\nHenkilo ja puhelinnumero lisatty\n");
-      console.table(puhelinluettelo);
       valinta = null;
       puhelinluetteloApp();
     } else if (valinta == 2) {
-      console.log(haeNumero(puhelinluettelo));
+      haeNumero(puhelinluettelo, input.question("\nAnna haettavan nimi: \n\n"));
       valinta = null;
       puhelinluetteloApp();
     } else if (valinta == 0) {
       console.log("\nOhjema suljetaan\n");
-      false;
+      valinta = null;
+      break;
     }
+    break;
   }
 }
 
-function haeNumero(taulukko) {
-  let haettavaHenkilo = taulukko.find(
-    (haettavaHenkilo) =>
-      haettavaHenkilo.nimi === input.question("Anna haettavan nimi: ")
-  );
-  console.table(haettavaHenkilo);
+function haeNumero(taulukko, hakuNimi) {
+  let loytyi = false;
+  taulukko.forEach((element) => {
+    if (element.nimi === hakuNimi) {
+      console.log("\nHaetun numero on: " + element.puhnro + "\n");
+      loytyi = true;
+    }
+  });
+  if (!loytyi) {
+    console.log("\nHaetulla nimella ei loytynyt yhtaan tulosta.\n");
+  }
 }
-
-puhelinluetteloApp();
