@@ -21,8 +21,8 @@ class Henkilo {
 }
 const puhelinluettelo = [];
 puhelinluettelo.push(
-  new Henkilo("Sami X", "01234567890"),
-  new Henkilo("Matti Meikäläinen", "0503890123")
+  new Henkilo("Herra X", "01234567890"),
+  new Henkilo("Herra Y", "0503890123")
 );
 
 let input = require("readline-sync");
